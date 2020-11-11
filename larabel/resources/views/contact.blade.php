@@ -1,0 +1,29 @@
+@extends('layouts.app')
+
+@section('title-block')Контакты@endsection
+
+@section('content')
+<h1>Страница контакты</h1>
+
+    <form action="/contact/submit" method="post">
+        <div class="form-group">
+            <label for="name">Введите имя</label>
+            <input type="text" name="name" value="" placeholder="Введите имя" id="name" class="form-control">
+        </div>
+        <div class="form-group">
+            <label for="email">EMAIl</label>
+            <input type="text" name="email" value="" placeholder="Введите email" id="email" class="form-control">
+        </div>
+        <div class="form-group">
+            <label for="subject">Введите тему сообщения</label>
+            <input type="text" name="subject" value="" placeholder="Введите тему сообщения" id="subject" class="form-control">
+        </div>
+         <div class="form-group">
+            <label for="message">Введите сообщение</label>
+            <textarea name="message" id="message" class="form-control" placeholder="Введите сообщение"></textarea>
+        </div>
+        <button type="submit" class="btn btn-success">Отправить</button>
+
+    </form>
+
+@endsection
