@@ -5,7 +5,18 @@
 @section('content')
 <h1>Страница контакты</h1>
 
-    <form action="/contact/submit" method="post">
+    @if($errors->any())
+    <div class="alert alert-danger">
+        <ul>
+            @foreach($errors->all() as $error )
+            <li>{{ $error }}</li>
+            @endforeach
+        </ul>
+    </div>
+    @endif
+
+    <form action="{{ route('contact-form') }}" method="post">
+        @csrf
         <div class="form-group">
             <label for="name">Введите имя</label>
             <input type="text" name="name" value="" placeholder="Введите имя" id="name" class="form-control">
